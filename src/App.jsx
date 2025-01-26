@@ -68,6 +68,25 @@ const App = () => {
           </div>
         )}
       </div>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <h3>Contact us</h3>
+        <div className="contact-links">
+          <a href="https://www.linkedin.com/in/abhishek-3028192a3/" target="_blank" rel="noopener noreferrer">
+            <img src="linkedin.png" alt="LinkedIn" />
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/Ak-official881" target="_blank" rel="noopener noreferrer">
+            <img src="github.png" alt="GitHub" />
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:ak.official881@gmail.com">
+            <img src="gmail.png" alt="Gmail" />
+            <span>Gmail</span>
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
