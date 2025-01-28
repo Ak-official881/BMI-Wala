@@ -6,6 +6,7 @@ const App = () => {
   const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(null);
   const [tagline, setTagline] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const calculateBMI = () => {
     if (height && weight) {
@@ -36,10 +37,24 @@ const App = () => {
       {/* Top Navigation Bar */}
       <div className="top-navbar">
         <h2 className="brand">BMI Wala</h2>
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
+          <a href="#home" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
         </nav>
       </div>
 
@@ -71,21 +86,34 @@ const App = () => {
 
       {/* Footer Section */}
       <footer className="footer">
-        <h3>Contact us</h3>
-        <div className="contact-links">
-          <a href="https://www.linkedin.com/in/abhishek-3028192a3/" target="_blank" rel="noopener noreferrer">
-            <img src="linkedin.png" alt="LinkedIn" />
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://github.com/Ak-official881" target="_blank" rel="noopener noreferrer">
-            <img src="github.png" alt="GitHub" />
-            <span>GitHub</span>
-          </a>
-          <a href="mailto:ak.official881@gmail.com">
-            <img src="gmail.png" alt="Gmail" />
-            <span>Gmail</span>
-          </a>
+        <div className="footer-left">
+          <h3>Contact us</h3>
+          <div className="contact-links">
+            <a
+              href="https://www.linkedin.com/in/abhishek-3028192a3/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="linkedin.png" alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/Ak-official881"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="github.png" alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:ak.official881@gmail.com">
+              <img src="gmail.png" alt="Gmail" />
+              <span>Gmail</span>
+            </a>
+          </div>
         </div>
+        <p className="health-tagline">
+          "A healthy outside starts from the inside. Stay fit, stay healthy!"
+        </p>
       </footer>
     </div>
   );
